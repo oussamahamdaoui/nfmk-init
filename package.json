@@ -1,6 +1,6 @@
 {
   "name": "nfmk-init",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "initialize noframework project",
   "main": "script.js",
   "repository": {
