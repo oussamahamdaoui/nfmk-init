@@ -1,0 +1,48 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "sass --watch src/.:build/",
+    "watch-js": "watchify src/index.js -o build/index.js",
+    "front-dev": "concurrently \"npm:watch-css\"  \"npm:watch-js\" ",
+    "watch": "concurrently \"npm:watch-*\"",
+    "build-js": "browserify src/index.js -o /build/index.js -p tinyify",
+    "build-css": "sass src/.:src/build/ --style compressed",
+    "build": "concurrently \"npm:build-*\""
+  },
+  "dependencies": {
+    "@forgjs/noframework": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "concurrently": "^5.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^22.17.0",
+    "sass": "^1.24.3",
+    "tinyify": "^2.5.2",
+    "watchify": "^3.11.1",
+    "babel-polyfill": "^6.26.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}
