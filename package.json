@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "initialize noframework project",
   "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oussamahamdaoui/nfmk-init.git"
+  },
+  "bin": {
+    "nfmk-init": "script.js"
+  },
   "dependencies": {
     "live-server": "^1.2.1",
     "ncp": "^2.0.0"
